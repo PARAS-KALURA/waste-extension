@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Voice Replacer",
+  "version": "1.0",
+  "description": "Replace YouTube audio with a fun sound",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["sounds/dog.mp3"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ]
+}
